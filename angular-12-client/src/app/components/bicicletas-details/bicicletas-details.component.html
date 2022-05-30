@@ -1,0 +1,46 @@
+<div>
+  <div *ngIf="currentBicicletas.id" class="edit-form">
+    <h4>Bicicletas</h4>
+    <form>
+      <div class="form-group">
+        <label for="ubicacion">ubicacion</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ubicacion"
+          [(ngModel)]="currentBicicletas.ubicacion"
+          name="ubicacion"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentBicicletas.description"
+          name="description"
+        />
+      </div>
+      <div class="form-group">
+        <label><strong>Disponible:</strong></label>
+        {{ currentBicicletas.disponible ? "Disponible" : "Ocupada" }}
+      </div>
+      <div class="form-group">
+        <label for="fechaDisponibilidad">Fecha Disponibilidad</label>
+        <input
+          type="text"
+          class="form-control"
+          id="fechaDisponibilidad"
+          [(ngModel)]="currentBicicletas.fechaDisponibilidad"
+          name="fechaDisponibilidad"
+        />
+      </div>
+    </form>
+    <p>{{ message }}</p>
+  </div>
+  <div *ngIf="!currentBicicletas.id">
+    <br />
+    <p>Cannot access this Tutorial...</p>
+  </div>
+</div>

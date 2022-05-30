@@ -1,0 +1,56 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="ubicacion">Ubicacion</label>
+          <input
+            type="text"
+            class="form-control"
+            id="ubicacion"
+            required
+            [(ngModel)]="bicicletas.ubicacion"
+            name="ubicacion"
+          />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="bicicletas.description"
+          name="description"
+        />
+      </div>
+      <div class="form-group">
+        <label for="disponible">disponible</label>
+        <input type="checkbox"
+          class="form-control"
+          id="disponible"
+          required
+          [(ngModel)]="bicicletas.disponible"
+          name="disponible"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="fechaDisponibilidad">Fecha disponibilidad</label>
+        <input
+          class="form-control"
+          id="fechaDisponibilidad"
+          required
+          [(ngModel)]="bicicletas.fechaDisponibilidad"
+          name="description"
+        />
+      </div>
+
+      <button (click)="saveBicicleta()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Fue añadido de manera correcta!</h4>
+      <button class="btn btn-success" (click)="newBicicletas()">Add</button>
+    </div>
+  </div>
+</div>
